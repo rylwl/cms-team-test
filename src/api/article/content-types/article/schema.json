@@ -21,7 +21,7 @@
     "content": {
       "type": "richtext"
     },
-    "authorId": {
+    "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"

@@ -32,6 +32,11 @@ npm run build
 yarn build
 ```
 
+# API接口
+<font color="#dd0000" size="10">获取深度数据需要在url中加上?populate=deep参数</font>
+
+***
+
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
