@@ -30,6 +30,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::paper-type.paper-type"
+    },
+    "good": {
+      "type": "integer"
+    },
+    "watched": {
+      "type": "integer"
     }
   }
 }
