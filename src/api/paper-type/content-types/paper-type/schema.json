@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paper_types",
+  "info": {
+    "singularName": "paper-type",
+    "pluralName": "paper-types",
+    "displayName": "paperType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "paperTypeId": {
+      "type": "uid"
+    },
+    "paperTypeName": {
+      "type": "string"
+    }
+  }
+}

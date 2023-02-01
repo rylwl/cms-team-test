@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_tabs",
+  "info": {
+    "singularName": "top-tab",
+    "pluralName": "top-tabs",
+    "displayName": "topTab"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tabId": {
+      "type": "uid"
+    },
+    "tabName": {
+      "type": "string"
+    }
+  }
+}
