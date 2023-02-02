@@ -29,7 +29,7 @@ module.exports = {
         const types = query.types.split(',')
 
         const entries = await strapi.entityService.findMany('api::article.article', {
-            fields: ['articleId'],
+            fields: ['articleId', 'title', 'good', 'watched', 'createdAt', 'updatedAt'],
             filters: {
                 paper_types: {
                     paperTypeId: {
@@ -37,6 +37,7 @@ module.exports = {
                     }
                 }
             },
+            populate: ['author', 'paper_types']
         })
         return entries;
     },
@@ -46,18 +47,27 @@ module.exports = {
             populate:['author']
         })
         let authorMap=new Map;
+        let authorInfoMap=new Map;
         goodList.forEach(element => {
             if(authorMap.has(element.author.id)){
                 authorMap.set(element.author.id,Number(element.good)+Number(authorMap.get(element.author.id)));
             }else{
                 authorMap.set(element.author.id,Number(element.good));
+                authorInfoMap.set(element.author.id,{
+                    authorName:element.author.authorName,
+                    position:element.author.position,
+                    company:element.author.company,
+                    information:element.author.information,
+                })
             }
         });
         let authorListArr=new Array;
         authorMap.forEach((value,key)=>{
+            let tempInfo=authorInfoMap.get(key);
             authorListArr.push({
                 authorId:key,
-                good:value
+                good:value,
+                ...tempInfo
             })
         })
         authorListArr.sort((first,last)=>{return last.good-first.good});
