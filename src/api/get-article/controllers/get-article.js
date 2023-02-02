@@ -29,5 +29,21 @@ module.exports = {
     } catch (err) {
       ctx.badRequest('getRecommendArticles error', { moreDetails: err });
     }
+  },
+  async getArticlesByPaperTypes(ctx,next){
+    try {
+      const data = await strapi.service('api::get-article.get-article').getArticlesByPaperTypes();
+      ctx.body = data;
+    } catch (err) {
+      ctx.badRequest('getArticleByPaperTypes error', { moreDetails: err });
+    }
+  },
+  async getAuthorTopList(ctx,next){
+    try{
+      const data=await strapi.service('api::get-article.get-article').getAuthorTopList();
+      ctx.body=data;
+    }catch(err){
+      ctx.badRequest('getAuthorTopList error', { moreDetails: err });
+    }
   }
 };
