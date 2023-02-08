@@ -8,7 +8,7 @@
 module.exports = {
     getLatestArticles: async () => {
         const entries = await strapi.entityService.findMany('api::article.article', {
-            fields: ['articleId', 'title', 'good', 'watched', 'createdAt', 'updatedAt'],
+            fields: ['articleId', 'title', 'good', 'watched','sketch','cover', 'createdAt', 'updatedAt'],
             sort: { updatedAt: 'DESC' },
             populate: ['author', 'paper_types']
         });
@@ -16,7 +16,7 @@ module.exports = {
     },
     getRecommendArticles: async () => {
         const entries = await strapi.entityService.findMany('api::article.article', {
-            fields: ['articleId', 'title', 'good', 'watched', 'createdAt', 'updatedAt'],
+            fields: ['articleId', 'title', 'good', 'watched','sketch','cover', 'createdAt', 'updatedAt'],
             sort: { good: 'DESC' },
             populate: ['author', 'paper_types']
         })
@@ -29,7 +29,7 @@ module.exports = {
         const types = query.types.split(',')
 
         const entries = await strapi.entityService.findMany('api::article.article', {
-            fields: ['articleId', 'title', 'good', 'watched', 'createdAt', 'updatedAt'],
+            fields: ['articleId', 'title', 'good', 'watched','sketch','cover', 'createdAt', 'updatedAt'],
             filters: {
                 paper_types: {
                     paperTypeId: {

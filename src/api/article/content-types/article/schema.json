@@ -36,6 +36,12 @@
     },
     "watched": {
       "type": "integer"
+    },
+    "sketch": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "string"
     }
   }
 }
