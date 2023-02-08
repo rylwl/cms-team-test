@@ -58,6 +58,7 @@ module.exports = {
                     position:element.author.position,
                     company:element.author.company,
                     information:element.author.information,
+                    avatar:element.author.avatar
                 })
             }
         });
